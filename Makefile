@@ -48,7 +48,7 @@ ACE05_JSON_PM13=$(ACE_OUT_DIR)/ace-05-comms-ptb-anno-chunks-json-pm13
 ACE05_JSON_YGD15_R11=$(ACE_OUT_DIR)/ace-05-comms-ptb-anno-chunks-json-ygd15-r11
 ACE05_JSON_YGD15_R32=$(ACE_OUT_DIR)/ace-05-comms-ptb-anno-chunks-json-ygd15-r32
 ACE05_SPLITS=$(ACE_OUT_DIR)/ace-05-splits
-APF_XML_FILES =$(notdir $(wildcard $(LDC2006T06_EN)/*/adj/*.apf.xml)) 
+APF_XML_FILES =$(notdir $(wildcard $(LDC2006T06_EN)/*/timex2norm/*.apf.xml)) 
 
 # SemEval-2010 Task 8 variables.
 SE_OUT_DIR=$(abspath $(OUT_DIR))/semeval_concrete4.5/
@@ -110,7 +110,7 @@ $(LDC2006T06_EN_SYM)/apf.v5.1.1.dtd: $(LDC2006T06)/dtd/apf.v5.1.1.dtd
 
 # Create a flat symlinks only copy of the LDC directory.
 # (This is done so that we can move the dtd files into the correct place.)
-$(LDC2006T06_EN_SYM)/%.apf.xml: $(LDC2006T06_EN)/*/adj/%.apf.xml $(LDC2006T06_EN)/*/adj/%.sgm
+$(LDC2006T06_EN_SYM)/%.apf.xml: $(LDC2006T06_EN)/*/timex2norm/%.apf.xml $(LDC2006T06_EN)/*/timex2norm/%.sgm
 	mkdir -p $(dir $@)
 	ln -s $^ $(dir $@) || true
 
